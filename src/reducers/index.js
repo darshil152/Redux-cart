@@ -14,10 +14,13 @@ function todoProduct(state = initProduct, action) {
                 ...state,
                 _products: action.payload
             }
+
         case GET_NUMBER_CART:
             return {
                 ...state
             }
+
+            
         case ADD_CART:
             if (state.numberCart == 0) {
                 let cart = {
@@ -48,6 +51,7 @@ function todoProduct(state = initProduct, action) {
                     state.Carts.push(_cart);
                 }
             }
+
             return {
                 ...state,
                 numberCart: state.numberCart + 1
@@ -65,10 +69,10 @@ function todoProduct(state = initProduct, action) {
                 state.numberCart--;
                 state.Carts[action.payload].quantity--;
             }
-
             return {
                 ...state
             }
+
         case DELETE_CART:
             let quantity_ = state.Carts[action.payload].quantity;
             return {
@@ -79,6 +83,7 @@ function todoProduct(state = initProduct, action) {
                 })
 
             }
+            
         default:
             return state;
     }

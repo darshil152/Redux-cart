@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router,Link, Route,Switch} from 'react-router-dom'
+import Charts from './Charts';
 import Cart from './components/Cart';
 import Header from './components/Header';
 import Product from './components/Product';
@@ -10,6 +11,7 @@ function App() {
             <Header />
             <Switch>
                <Route path="/" exact component={Product} />
+               <Route path="/chart" exact component={Charts} />
                <Route path="/carts" exact component={Cart} />
             </Switch>
         </div>
